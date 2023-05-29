@@ -1,0 +1,15 @@
+#include "geometry_msgs/msg/Point.idl"
+#include "std_msgs/msg/String.idl"
+#include "std_msgs/msg/Int8.idl"
+
+module custom_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Custom command message with an array of target/targets.")
+    struct AgentCommand {
+      sequence<std_msgs::msg::Int8> agents;
+      std_msgs::msg::String command;
+      sequence<geometry_msgs::msg::Point> target;
+    };
+  };
+};
