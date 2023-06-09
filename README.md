@@ -53,9 +53,12 @@ sudo ./fastddsgen \
 -I /opt/ros/galactic/share/ \
 -d <output_directory> \
 -typeros2 \
-/opt/ros/$ROS_DISTRO/share/geometry_msgs/msg/PoseStamped.idl 
+/opt/ros/$ROS_DISTRO/share/geometry_msgs/msg/PoseStamped.idl \
 -cs \
 -example CMake
+
+# or 
+sudo ./fastddsgen -I /opt/ros/galactic/share/ -d <output_directory> -typeros2 /opt/ros/$ROS_DISTRO/share/geometry_msgs/msg/PoseStamped.idl -cs -example CMake
 ```
 - IDL formats can be found inside `/opt/ros/$ROS_DISTRO/share/`
 - Do note that `-cs` is needed since ROS2 IDL variables are similar, but are case sensitive

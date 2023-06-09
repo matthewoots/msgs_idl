@@ -1,0 +1,18 @@
+#include "std_msgs/msg/UInt8.idl"
+#include "std_msgs/msg/String.idl"
+#include "std_msgs/msg/Bool.idl"
+#include "std_msgs/msg/Float32.idl"
+
+module custom_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Custom status message.")
+    struct AgentStatus {
+      std_msgs::msg::UInt8 mav_id;
+      std_msgs::msg::Bool connected;
+      std_msgs::msg::String fm_state; // flight manager state
+      std_msgs::msg::String fc_state; // flight controller state
+      std_msgs::msg::Float32 battery;
+    };
+  };
+};
